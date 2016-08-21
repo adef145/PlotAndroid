@@ -1,4 +1,4 @@
-package com.teslacode.plotandroid;
+package com.teslacode.plotandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,12 @@ import android.widget.TextView;
 
 import com.teslacode.plot.Plot;
 import com.teslacode.plot.annotation.PlotBundle;
+import com.teslacode.plotandroid.Constant;
+import com.teslacode.plotandroid.R;
+import com.teslacode.plotandroid.model.UserParcelable;
+import com.teslacode.plotandroid.model.UserSerializable;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,10 +39,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @PlotBundle(key = Constant.KEYS.PLOT_STRING)
     String plotString = "String";
 
+    @PlotBundle(key = Constant.KEYS.PLOT_USER_PARCELABLE)
+    UserParcelable plotUserParcelable = new UserParcelable();
+
+    @PlotBundle(key = Constant.KEYS.PLOT_USER_SERIALIZABLE)
+    UserSerializable plotUserSerializable = new UserSerializable();
+
+    @PlotBundle(key = Constant.KEYS.PLOT_INTEGER_ARRAY)
+    int[] plotIntegerArray = {1};
+
+    @PlotBundle(key = Constant.KEYS.PLOT_INTEGER_ARRAYLIST)
+    ArrayList<Integer> plotIntegerArrayList = new ArrayList<Integer>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        plotIntegerArrayList.add(1);
 
         TextView plotIntText = (TextView) findViewById(R.id.plot_int);
         TextView plotDoubleText = (TextView) findViewById(R.id.plot_double);
@@ -45,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView plotBooleanText = (TextView) findViewById(R.id.plot_boolean);
         TextView plotCharText = (TextView) findViewById(R.id.plot_char);
         TextView plotStringText = (TextView) findViewById(R.id.plot_string);
+        TextView plotUserParcelableNameText = (TextView) findViewById(R.id.plot_user_parcelable_name);
+        TextView plotUserParcelableAgeText = (TextView) findViewById(R.id.plot_user_parcelable_age);
+        TextView plotUserSerializableNameText = (TextView) findViewById(R.id.plot_user_serializable_name);
+        TextView plotUserSerializableAgeText = (TextView) findViewById(R.id.plot_user_serializable_age);
+        TextView plotIntegerArrayText = (TextView) findViewById(R.id.plot_integer_array);
+        TextView plotIntegerArrayListText = (TextView) findViewById(R.id.plot_integer_arraylist);
 
         plotIntText.setText("" + plotInt);
         plotDoubleText.setText("" + plotDouble);
@@ -53,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plotBooleanText.setText("" + plotBoolean);
         plotCharText.setText("" + plotChar);
         plotStringText.setText("" + plotString);
+        plotUserParcelableNameText.setText("" + plotUserParcelable.name);
+        plotUserParcelableAgeText.setText("" + plotUserParcelable.age);
+        plotUserSerializableNameText.setText("" + plotUserSerializable.name);
+        plotUserSerializableAgeText.setText("" + plotUserSerializable.age);
+        plotIntegerArrayText.setText("" + plotIntegerArray);
+        plotIntegerArrayListText.setText("" + plotIntegerArrayList);
 
         Button next = (Button) findViewById(R.id.next);
 

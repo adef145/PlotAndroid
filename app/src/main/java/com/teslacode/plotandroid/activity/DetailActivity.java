@@ -1,4 +1,4 @@
-package com.teslacode.plotandroid;
+package com.teslacode.plotandroid.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,12 @@ import android.widget.TextView;
 
 import com.teslacode.plot.Plot;
 import com.teslacode.plot.annotation.PlotBundle;
+import com.teslacode.plotandroid.Constant;
+import com.teslacode.plotandroid.R;
+import com.teslacode.plotandroid.model.UserParcelable;
+import com.teslacode.plotandroid.model.UserSerializable;
+
+import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -30,6 +36,18 @@ public class DetailActivity extends AppCompatActivity {
     @PlotBundle(key = Constant.KEYS.PLOT_STRING)
     String plotString;
 
+    @PlotBundle(key = Constant.KEYS.PLOT_USER_PARCELABLE)
+    UserParcelable plotUserParcelable;
+
+    @PlotBundle(key = Constant.KEYS.PLOT_USER_SERIALIZABLE)
+    UserSerializable plotUserSerializable;
+
+    @PlotBundle(key = Constant.KEYS.PLOT_INTEGER_ARRAY)
+    int[] plotIntegerArray;
+
+    @PlotBundle(key = Constant.KEYS.PLOT_INTEGER_ARRAYLIST)
+    ArrayList<Integer> plotIntegerArrayList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +62,12 @@ public class DetailActivity extends AppCompatActivity {
         TextView plotBooleanText = (TextView) findViewById(R.id.plot_boolean);
         TextView plotCharText = (TextView) findViewById(R.id.plot_char);
         TextView plotStringText = (TextView) findViewById(R.id.plot_string);
+        TextView plotUserParcelableNameText = (TextView) findViewById(R.id.plot_user_parcelable_name);
+        TextView plotUserParcelableAgeText = (TextView) findViewById(R.id.plot_user_parcelable_age);
+        TextView plotUserSerializableNameText = (TextView) findViewById(R.id.plot_user_serializable_name);
+        TextView plotUserSerializableAgeText = (TextView) findViewById(R.id.plot_user_serializable_age);
+        TextView plotIntegerArrayText = (TextView) findViewById(R.id.plot_integer_array);
+        TextView plotIntegerArrayListText = (TextView) findViewById(R.id.plot_integer_arraylist);
 
         plotIntText.setText("" + plotInt);
         plotDoubleText.setText("" + plotDouble);
@@ -52,5 +76,11 @@ public class DetailActivity extends AppCompatActivity {
         plotBooleanText.setText("" + plotBoolean);
         plotCharText.setText("" + plotChar);
         plotStringText.setText("" + plotString);
+        plotUserParcelableNameText.setText("" + plotUserParcelable.name);
+        plotUserParcelableAgeText.setText("" + plotUserParcelable.age);
+        plotUserSerializableNameText.setText("" + plotUserSerializable.name);
+        plotUserSerializableAgeText.setText("" + plotUserSerializable.age);
+        plotIntegerArrayText.setText("" + plotIntegerArray);
+        plotIntegerArrayListText.setText("" + plotIntegerArrayList);
     }
 }

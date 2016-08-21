@@ -7,7 +7,6 @@ import com.teslacode.plot.binder.PlotTypeBinder;
 import com.teslacode.plot.binder.TypeBinder;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Type;
 
 /**
  * Created by HappyFresh on 8/19/16.
@@ -19,14 +18,11 @@ public class Plot {
         for (Field field : targetClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(PlotBundle.class)) {
                 PlotBundle plotBundle = field.getAnnotation(PlotBundle.class);
-
                 if (plotBundle.imported()) {
                     String key = getKey(field, plotBundle.key());
-                    Type type = field.getType();
-
                     field.setAccessible(true);
                     try {
-                        TypeBinder typeBinder = PlotTypeBinder.mMapTypeBinder.get(type);
+                        TypeBinder typeBinder = PlotTypeBinder.getTypeBinder(field);
                         typeBinder.setField(field, target, typeBinder.getBundle(bundle, key));
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
@@ -42,14 +38,11 @@ public class Plot {
         for (Field field : targetClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(PlotBundle.class)) {
                 PlotBundle plotBundle = field.getAnnotation(PlotBundle.class);
-
                 if (plotBundle.exported()) {
                     String key = getKey(field, plotBundle.key());
-                    Type type = field.getType();
-
                     field.setAccessible(true);
                     try {
-                        TypeBinder typeBinder = PlotTypeBinder.mMapTypeBinder.get(type);
+                        TypeBinder typeBinder = PlotTypeBinder.getTypeBinder(field);
                         typeBinder.setBundle(bundle, key, typeBinder.getField(field, target));
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
