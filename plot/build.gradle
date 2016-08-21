@@ -8,7 +8,7 @@ ext {
     libraryName = 'Plot'
     artifact = 'plot'
 
-    libraryDescription = 'A wrapper for Facebook Native Like Button (LikeView) on Android'
+    libraryDescription = 'Bindder bundle for field of class'
 
     siteUrl = 'https://github.com/teslacode/plot'
     gitUrl = 'https://github.com/teslacode/plot.git'
