@@ -51,12 +51,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @PlotBundle(key = Constant.KEYS.PLOT_INTEGER_ARRAYLIST)
     ArrayList<Integer> plotIntegerArrayList = new ArrayList<Integer>();
 
+    @PlotBundle(key = Constant.KEYS.PLOT_STRING_ARRAY)
+    String[] plotStringArray = {"String"};
+
+    @PlotBundle(key = Constant.KEYS.PLOT_STRING_ARRAYLIST)
+    ArrayList<String> plotStringArrayList = new ArrayList<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         plotIntegerArrayList.add(1);
+        plotStringArrayList.add("String");
 
         TextView plotIntText = (TextView) findViewById(R.id.plot_int);
         TextView plotDoubleText = (TextView) findViewById(R.id.plot_double);
@@ -71,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView plotUserSerializableAgeText = (TextView) findViewById(R.id.plot_user_serializable_age);
         TextView plotIntegerArrayText = (TextView) findViewById(R.id.plot_integer_array);
         TextView plotIntegerArrayListText = (TextView) findViewById(R.id.plot_integer_arraylist);
+        TextView plotStringArrayText = (TextView) findViewById(R.id.plot_string_array);
+        TextView plotStringArrayListText = (TextView) findViewById(R.id.plot_string_arraylist);
 
         plotIntText.setText("" + plotInt);
         plotDoubleText.setText("" + plotDouble);
@@ -85,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plotUserSerializableAgeText.setText("" + plotUserSerializable.age);
         plotIntegerArrayText.setText("" + plotIntegerArray);
         plotIntegerArrayListText.setText("" + plotIntegerArrayList);
+        plotStringArrayText.setText("" + plotStringArray);
+        plotStringArrayListText.setText("" + plotStringArrayList);
 
         Button next = (Button) findViewById(R.id.next);
 

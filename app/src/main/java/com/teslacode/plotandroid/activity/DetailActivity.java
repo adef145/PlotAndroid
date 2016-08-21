@@ -48,6 +48,12 @@ public class DetailActivity extends AppCompatActivity {
     @PlotBundle(key = Constant.KEYS.PLOT_INTEGER_ARRAYLIST)
     ArrayList<Integer> plotIntegerArrayList;
 
+    @PlotBundle(key = Constant.KEYS.PLOT_STRING_ARRAY)
+    String[] plotStringArray;
+
+    @PlotBundle(key = Constant.KEYS.PLOT_STRING_ARRAYLIST)
+    ArrayList<String> plotStringArrayList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +74,8 @@ public class DetailActivity extends AppCompatActivity {
         TextView plotUserSerializableAgeText = (TextView) findViewById(R.id.plot_user_serializable_age);
         TextView plotIntegerArrayText = (TextView) findViewById(R.id.plot_integer_array);
         TextView plotIntegerArrayListText = (TextView) findViewById(R.id.plot_integer_arraylist);
+        TextView plotStringArrayText = (TextView) findViewById(R.id.plot_string_array);
+        TextView plotStringArrayListText = (TextView) findViewById(R.id.plot_string_arraylist);
 
         plotIntText.setText("" + plotInt);
         plotDoubleText.setText("" + plotDouble);
@@ -82,5 +90,7 @@ public class DetailActivity extends AppCompatActivity {
         plotUserSerializableAgeText.setText("" + plotUserSerializable.age);
         plotIntegerArrayText.setText("" + plotIntegerArray);
         plotIntegerArrayListText.setText("" + plotIntegerArrayList);
+        plotStringArrayText.setText("" + plotStringArray);
+        plotStringArrayListText.setText("" + plotStringArrayList);
     }
 }
