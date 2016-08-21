@@ -5,9 +5,6 @@ import android.os.Parcelable;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by HappyFresh on 8/20/16.
- */
 public class ParcelableArrayBinder implements TypeBinder<Parcelable[]> {
 
     @Override

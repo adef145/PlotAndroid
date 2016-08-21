@@ -4,9 +4,6 @@ import android.os.Bundle;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by HappyFresh on 8/20/16.
- */
 public class DoubleBinder implements TypeBinder<Double> {
 
     @Override

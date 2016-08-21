@@ -6,9 +6,6 @@ import android.os.Parcelable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-/**
- * Created by HappyFresh on 8/20/16.
- */
 public class ParcelableArrayListBinder implements TypeBinder<ArrayList<Parcelable>> {
 
     @Override

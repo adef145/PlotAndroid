@@ -5,9 +5,6 @@ import android.os.Bundle;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-/**
- * Created by HappyFresh on 8/21/16.
- */
 public class CharSequenceArrayListBinder implements TypeBinder<ArrayList<CharSequence>> {
 
     @Override

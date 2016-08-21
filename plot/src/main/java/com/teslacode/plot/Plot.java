@@ -42,7 +42,7 @@ public class Plot {
      * Get bundle from {@code target}.
      *
      * @param target Target class for get bundle.
-     * @return
+     * @return Bundle
      */
     public static Bundle exportBundle(Object target) {
         Bundle bundle = new Bundle();

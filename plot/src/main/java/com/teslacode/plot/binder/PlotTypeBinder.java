@@ -9,16 +9,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by HappyFresh on 8/20/16.
- */
 public class PlotTypeBinder {
 
     private static Map<Class<?>, TypeBinder> mMapTypeBinder = new HashMap<>();
 
     static {
         mMapTypeBinder.put(boolean.class, new BooleanBinder());
-        mMapTypeBinder.put(boolean[].class, new BooleanBinder());
+        mMapTypeBinder.put(boolean[].class, new BooleanArrayBinder());
         mMapTypeBinder.put(Boolean.class, new BooleanBinder());
         mMapTypeBinder.put(byte.class, new ByteBinder());
         mMapTypeBinder.put(byte[].class, new ByteArrayBinder());

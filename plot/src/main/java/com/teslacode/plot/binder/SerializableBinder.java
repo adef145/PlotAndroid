@@ -5,9 +5,6 @@ import android.os.Bundle;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 
-/**
- * Created by HappyFresh on 8/20/16.
- */
 public class SerializableBinder implements TypeBinder<Serializable> {
 
     @Override
