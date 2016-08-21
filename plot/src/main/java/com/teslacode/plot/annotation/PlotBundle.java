@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * Created by HappyFresh on 8/19/16.
  */
 @Documented
-@Retention(value = RetentionPolicy.RUNTIME)
+@Retention(value = RetentionPolicy.CLASS)
 @Target(ElementType.FIELD)
 public @interface PlotBundle {
 
