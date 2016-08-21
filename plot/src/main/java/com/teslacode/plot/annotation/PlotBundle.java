@@ -14,9 +14,12 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface PlotBundle {
 
+    /** bundle will be imported if true, else not imported */
     boolean imported() default true;
 
+    /** bundle will be exported if true, else not exported */
     boolean exported() default true;
 
+    /** key for bundle, default will be field name */
     String key() default "";
 }
