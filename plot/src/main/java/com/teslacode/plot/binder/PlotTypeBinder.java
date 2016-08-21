@@ -26,6 +26,9 @@ public class PlotTypeBinder {
         mMapTypeBinder.put(char.class, new CharBinder());
         mMapTypeBinder.put(char[].class, new CharArrayBinder());
         mMapTypeBinder.put(Character.class, new CharBinder());
+        mMapTypeBinder.put(CharSequence[].class, new CharSequenceArrayBinder());
+        mMapTypeBinder.put(new ArrayList<CharSequence>().getClass(), new CharSequenceArrayListBinder());
+        mMapTypeBinder.put(CharSequence.class, new CharSequenceBinder());
         mMapTypeBinder.put(double.class, new DoubleBinder());
         mMapTypeBinder.put(double[].class, new DoubleArrayBinder());
         mMapTypeBinder.put(Double.class, new DoubleBinder());
