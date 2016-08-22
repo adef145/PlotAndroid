@@ -51,12 +51,12 @@ public class PlotTypeBinder {
 
     public static TypeBinder getTypeBinder(Field field) {
         Type type = validateType(field);
-        return PlotTypeBinder.getMapTypeBinder().get(type);
+        return getMapTypeBinder().get(type);
     }
 
     private static Type validateType(Field field) {
         Type type = field.getType();
-        if (PlotTypeBinder.getMapTypeBinder().containsKey(type)) {
+        if (getMapTypeBinder().containsKey(type)) {
             return type;
         }
         return validateOtherType(field);
