@@ -1,5 +1,6 @@
 package com.teslacode.plot.binder;
 
+import android.os.IBinder;
 import android.os.Parcelable;
 
 import java.io.Serializable;
@@ -32,6 +33,7 @@ public class PlotTypeBinder {
         mMapTypeBinder.put(float.class, new FloatBinder());
         mMapTypeBinder.put(float[].class, new FloatArrayBinder());
         mMapTypeBinder.put(Float.class, new FloatBinder());
+        mMapTypeBinder.put(IBinder.class, new IBinderBinder());
         mMapTypeBinder.put(int[].class, new IntegerArrayBinder());
         mMapTypeBinder.put(new ArrayList<Integer>().getClass(), new IntegerArrayListBinder());
         mMapTypeBinder.put(Integer.class, new IntegerBinder());
@@ -69,6 +71,8 @@ public class PlotTypeBinder {
             type = Parcelable.class;
         } else if (Serializable.class.isAssignableFrom(field.getType())) {
             type = Serializable.class;
+        } else if (IBinder.class.isAssignableFrom(field.getType())) {
+            type = IBinder.class;
         }
 
         return type;
