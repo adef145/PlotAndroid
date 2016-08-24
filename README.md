@@ -1,7 +1,7 @@
 # Plot
 
 Field binding for Android bundle.
-Eliminate `bundle.get` & `bundle.put` calls by using `Plot.importBundle(this, bundle)` & `Plot.exportBundle(this)` in Android lifecycle with annotation `@PlotBundle` on field.
+Eliminate `bundle.get` & `bundle.put` calls by using `Plot.unpack(this, bundle)` & `Plot.pack(this)` in Android lifecycle with annotation `@PlotBundle` on field.
 
 ## Example
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(getBaseContext(), DetailActivity.class);
-        Bundle bundle = Plot.exportBundle(this);
+        Bundle bundle = Plot.pack(this);
         intent.putExtras(bundle);
         startActivity(intent);
     }
@@ -56,7 +56,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Plot.importBundle(this, getIntent().getExtras());
+        Plot.unpack(this, getIntent().getExtras());
 
         TextView plotIntText = (TextView) findViewById(R.id.plot_int);
         TextView plotDoubleText = (TextView) findViewById(R.id.plot_double);
@@ -79,6 +79,6 @@ repositories {
 ...
 
 dependencies {
-    compile 'com.teslacode.plot:plot:0.0.2'
+    compile 'com.teslacode.plot:plot:0.1.0'
 }
 ```
