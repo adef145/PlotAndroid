@@ -79,6 +79,6 @@ repositories {
 ...
 
 dependencies {
-    compile 'com.teslacode.plot:plot:0.1.0'
+    compile 'com.teslacode.plot:plot:0.1.1'
 }
 ```
