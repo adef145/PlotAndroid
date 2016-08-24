@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(getBaseContext(), DetailActivity.class);
-        Bundle bundle = Plot.exportBundle(this);
+        Bundle bundle = Plot.pack(this);
         intent.putExtras(bundle);
         startActivity(intent);
     }

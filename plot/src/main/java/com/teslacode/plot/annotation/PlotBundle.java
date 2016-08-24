@@ -12,18 +12,18 @@ import java.lang.annotation.Target;
 public @interface PlotBundle {
 
     /**
-     * Bundle will be imported if true, else not imported.
+     * Specific bundle value will be unpack if true, else not unpack.
      *
      * @return Boolean.
      */
-    boolean imported() default true;
+    boolean unpackable() default true;
 
     /**
-     * Bundle will be exported if true, else not exported.
+     * Specific bundle will be pack if true, else not pack.
      *
      * @return Boolean.
      */
-    boolean exported() default true;
+    boolean packable() default true;
 
     /**
      * Key for bundle, default will be field name.

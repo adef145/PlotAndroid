@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Plot.importBundle(this, getIntent().getExtras());
+        Plot.unpack(this, getIntent().getExtras());
 
         TextView plotIntText = (TextView) findViewById(R.id.plot_int);
         TextView plotDoubleText = (TextView) findViewById(R.id.plot_double);

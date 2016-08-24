@@ -14,17 +14,17 @@ import java.lang.reflect.Field;
 public class Plot {
 
     /**
-     * Binding bundle to specified {@code target} with {@code bundle} value.
+     * Unpack {@code bundle} and binding to specified {@code target}.
      *
      * @param target Target class for bundle binding.
      * @param bundle Bundle value for binding to target.
      */
-    public static void importBundle(Object target, Bundle bundle) {
+    public static void unpack(Object target, Bundle bundle) {
         Class<?> targetClass = target.getClass();
         for (Field field : targetClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(PlotBundle.class)) {
                 PlotBundle plotBundle = field.getAnnotation(PlotBundle.class);
-                if (plotBundle.imported()) {
+                if (plotBundle.unpackable()) {
                     String key = getKey(field, plotBundle.key());
                     field.setAccessible(true);
                     try {
@@ -39,18 +39,18 @@ public class Plot {
     }
 
     /**
-     * Get bundle from {@code target}.
+     * Pack bundle from {@code target}.
      *
      * @param target Target class for get bundle.
      * @return Bundle
      */
-    public static Bundle exportBundle(Object target) {
+    public static Bundle pack(Object target) {
         Bundle bundle = new Bundle();
         Class<?> targetClass = target.getClass();
         for (Field field : targetClass.getDeclaredFields()) {
             if (field.isAnnotationPresent(PlotBundle.class)) {
                 PlotBundle plotBundle = field.getAnnotation(PlotBundle.class);
-                if (plotBundle.exported()) {
+                if (plotBundle.packable()) {
                     String key = getKey(field, plotBundle.key());
                     field.setAccessible(true);
                     try {
