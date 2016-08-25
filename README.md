@@ -5,7 +5,7 @@ Eliminate `bundle.get` & `bundle.put` calls by using `Plot.unpack(this, bundle)`
 
 ## Example
 
-#### Exported
+#### pack
 ```java
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 ```
 
-#### Imported
+#### unpack
 ```java
 public class DetailActivity extends AppCompatActivity {
 
