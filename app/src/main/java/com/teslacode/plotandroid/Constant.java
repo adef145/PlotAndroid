@@ -6,6 +6,7 @@ package com.teslacode.plotandroid;
 public class Constant {
 
     public interface KEYS {
+
         String PLOT_INT = "PLOT_INT";
         String PLOT_DOUBLE = "PLOT_DOUBLE";
         String PLOT_FLOAT = "PLOT_FLOAT";
@@ -14,6 +15,7 @@ public class Constant {
         String PLOT_CHAR = "PLOT_CHAR";
         String PLOT_STRING = "PLOT_STRING";
         String PLOT_USER_PARCELABLE = "PLOT_USER_PARCELABLE";
+        String PLOT_USER_PARCELER = "PLOT_USER_PARCELER";
         String PLOT_USER_SERIALIZABLE = "PLOT_USER_SERIALIZABLE";
         String PLOT_INTEGER_ARRAY = "PLOT_INTEGER_ARRAY";
         String PLOT_INTEGER_ARRAYLIST = "PLOT_INTEGER_ARRAYLIST";

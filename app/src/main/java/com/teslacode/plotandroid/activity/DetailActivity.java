@@ -9,6 +9,7 @@ import com.teslacode.plot.annotation.PlotBundle;
 import com.teslacode.plotandroid.Constant;
 import com.teslacode.plotandroid.R;
 import com.teslacode.plotandroid.model.UserParcelable;
+import com.teslacode.plotandroid.model.UserParceler;
 import com.teslacode.plotandroid.model.UserSerializable;
 
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ public class DetailActivity extends AppCompatActivity {
 
     @PlotBundle(key = Constant.KEYS.PLOT_USER_PARCELABLE)
     UserParcelable plotUserParcelable;
+
+    @PlotBundle(key = Constant.KEYS.PLOT_USER_PARCELER)
+    UserParceler plotUserParceler;
 
     @PlotBundle(key = Constant.KEYS.PLOT_USER_SERIALIZABLE)
     UserSerializable plotUserSerializable;
@@ -70,6 +74,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView plotStringText = (TextView) findViewById(R.id.plot_string);
         TextView plotUserParcelableNameText = (TextView) findViewById(R.id.plot_user_parcelable_name);
         TextView plotUserParcelableAgeText = (TextView) findViewById(R.id.plot_user_parcelable_age);
+        TextView plotUserParcelerNameText = (TextView) findViewById(R.id.plot_user_parceler_name);
         TextView plotUserSerializableNameText = (TextView) findViewById(R.id.plot_user_serializable_name);
         TextView plotUserSerializableAgeText = (TextView) findViewById(R.id.plot_user_serializable_age);
         TextView plotIntegerArrayText = (TextView) findViewById(R.id.plot_integer_array);
@@ -86,6 +91,7 @@ public class DetailActivity extends AppCompatActivity {
         plotStringText.setText("" + plotString);
         plotUserParcelableNameText.setText("" + plotUserParcelable.name);
         plotUserParcelableAgeText.setText("" + plotUserParcelable.age);
+        plotUserParcelerNameText.setText("" + plotUserParceler.getName());
         plotUserSerializableNameText.setText("" + plotUserSerializable.name);
         plotUserSerializableAgeText.setText("" + plotUserSerializable.age);
         plotIntegerArrayText.setText("" + plotIntegerArray);
