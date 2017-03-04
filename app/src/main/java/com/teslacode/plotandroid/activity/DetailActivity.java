@@ -13,6 +13,8 @@ import com.teslacode.plotandroid.model.UserParceler;
 import com.teslacode.plotandroid.model.UserSerializable;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -58,6 +60,12 @@ public class DetailActivity extends AppCompatActivity {
     @PlotBundle(key = Constant.KEYS.PLOT_STRING_ARRAYLIST)
     ArrayList<String> plotStringArrayList;
 
+    @PlotBundle(key = Constant.KEYS.PLOT_STRING_LIST)
+    List<String> plotStringList;
+
+    @PlotBundle(key = Constant.KEYS.PLOT_MAP)
+    Map<String, String> plotMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +89,8 @@ public class DetailActivity extends AppCompatActivity {
         TextView plotIntegerArrayListText = (TextView) findViewById(R.id.plot_integer_arraylist);
         TextView plotStringArrayText = (TextView) findViewById(R.id.plot_string_array);
         TextView plotStringArrayListText = (TextView) findViewById(R.id.plot_string_arraylist);
+        TextView plotStringListText = (TextView) findViewById(R.id.plot_string_list);
+        TextView plotMapText = (TextView) findViewById(R.id.plot_map);
 
         plotIntText.setText("" + plotInt);
         plotDoubleText.setText("" + plotDouble);
@@ -98,5 +108,7 @@ public class DetailActivity extends AppCompatActivity {
         plotIntegerArrayListText.setText("" + plotIntegerArrayList);
         plotStringArrayText.setText("" + plotStringArray);
         plotStringArrayListText.setText("" + plotStringArrayList);
+        plotStringListText.setText("" + plotStringList);
+        plotMapText.setText("" + plotMap);
     }
 }

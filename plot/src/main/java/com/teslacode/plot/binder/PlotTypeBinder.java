@@ -10,6 +10,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PlotTypeBinder {
@@ -48,6 +49,8 @@ public class PlotTypeBinder {
         mMapTypeBinder.put(String[].class, new StringArrayBinder());
         mMapTypeBinder.put(new ArrayList<String>().getClass(), new StringArrayListBinder());
         mMapTypeBinder.put(String.class, new StringBinder());
+        mMapTypeBinder.put(List.class, new ParcelableArrayListBinder());
+        mMapTypeBinder.put(Map.class, new SerializableBinder());
     }
 
     public static Map<Class<?>, TypeBinder> getMapTypeBinder() {
@@ -72,11 +75,14 @@ public class PlotTypeBinder {
 
         if (Parcelable.class.isAssignableFrom(field.getType())) {
             type = Parcelable.class;
-        } else if (Serializable.class.isAssignableFrom(field.getType())) {
+        }
+        else if (Serializable.class.isAssignableFrom(field.getType())) {
             type = Serializable.class;
-        } else if (IBinder.class.isAssignableFrom(field.getType())) {
+        }
+        else if (IBinder.class.isAssignableFrom(field.getType())) {
             type = IBinder.class;
-        } else if (field.getType().isAnnotationPresent(Parcel.class)) {
+        }
+        else if (field.getType().isAnnotationPresent(Parcel.class)) {
             type = Parcel.class;
         }
 

@@ -21,5 +21,7 @@ public class Constant {
         String PLOT_INTEGER_ARRAYLIST = "PLOT_INTEGER_ARRAYLIST";
         String PLOT_STRING_ARRAY = "PLOT_STRING_ARRAY";
         String PLOT_STRING_ARRAYLIST = "PLOT_STRING_ARRAYLIST";
+        String PLOT_STRING_LIST = "PLOT_STRING_LIST";
+        String PLOT_MAP = "PLOT_MAP";
     }
 }

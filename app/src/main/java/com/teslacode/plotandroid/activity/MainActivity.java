@@ -16,6 +16,9 @@ import com.teslacode.plotandroid.model.UserParceler;
 import com.teslacode.plotandroid.model.UserSerializable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -61,6 +64,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @PlotBundle(key = Constant.KEYS.PLOT_STRING_ARRAYLIST)
     ArrayList<String> plotStringArrayList = new ArrayList<String>();
 
+    @PlotBundle(key = Constant.KEYS.PLOT_STRING_LIST)
+    List<String> plotStringList = new ArrayList<String>();
+
+    @PlotBundle(key = Constant.KEYS.PLOT_MAP)
+    Map<String, String> plotMap = new HashMap<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plotUserParceler.setName("ABC");
         plotIntegerArrayList.add(1);
         plotStringArrayList.add("String");
+        plotStringList.add("String 1");
+        plotMap.put("Map", "Map");
 
         TextView plotIntText = (TextView) findViewById(R.id.plot_int);
         TextView plotDoubleText = (TextView) findViewById(R.id.plot_double);
@@ -86,6 +97,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView plotIntegerArrayListText = (TextView) findViewById(R.id.plot_integer_arraylist);
         TextView plotStringArrayText = (TextView) findViewById(R.id.plot_string_array);
         TextView plotStringArrayListText = (TextView) findViewById(R.id.plot_string_arraylist);
+        TextView plotStringListText = (TextView) findViewById(R.id.plot_string_list);
+        TextView plotMapText = (TextView) findViewById(R.id.plot_map);
 
         plotIntText.setText("" + plotInt);
         plotDoubleText.setText("" + plotDouble);
@@ -103,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         plotIntegerArrayListText.setText("" + plotIntegerArrayList);
         plotStringArrayText.setText("" + plotStringArray);
         plotStringArrayListText.setText("" + plotStringArrayList);
+        plotStringListText.setText("" + plotStringList);
+        plotMapText.setText("" + plotMap);
 
         Button next = (Button) findViewById(R.id.next);
 
