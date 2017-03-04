@@ -67,6 +67,13 @@ public class DetailActivity extends AppCompatActivity {
 }
 ```
 
+## Support
+
+* Native type & object
+* Array, List, & Array List
+* Map & Hash Map
+* Parcelable & Parceler from this <a href="https://github.com/johncarl81/parceler">library</a>
+
 ## Download
 Configure your project-level build.gradle to include the 'android-apt' plugin:
 ```gradle
@@ -79,6 +86,6 @@ repositories {
 ...
 
 dependencies {
-    compile 'com.teslacode.plot:plot:0.1.1'
+    compile 'com.teslacode.plot:plot:0.2.0'
 }
 ```
