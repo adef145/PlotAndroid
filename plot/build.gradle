@@ -11,17 +11,17 @@ apply plugin: 'com.android.library'
 apply plugin: 'android-apt'
 
 ext {
-    bintrayRepo = 'teslacode'
+    bintrayRepo = 'maven'
     bintrayName = 'plot'
 
-    publishedGroupId = 'com.teslacode.plot'
+    publishedGroupId = 'com.adefruandta.plot'
     libraryName = 'Plot'
     artifact = 'plot'
 
     libraryDescription = 'Bindder bundle for field of class'
 
-    siteUrl = 'https://github.com/teslacode/plot'
-    gitUrl = 'https://github.com/teslacode/plot.git'
+    siteUrl = 'https://github.com/adef145/plot'
+    gitUrl = 'https://github.com/adef145/plot.git'
 
     libraryVersion = '0.2.0'
 
@@ -63,5 +63,5 @@ dependencies {
 }
 
 // Place it at the end of the file
-apply from: 'https://raw.githubusercontent.com/teslacode/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/teslacode/JCenter/master/bintrayv1.gradle'
+apply from: 'https://raw.githubusercontent.com/adef145/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/adef145/JCenter/master/bintrayv1.gradle'

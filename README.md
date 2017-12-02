@@ -79,13 +79,13 @@ Configure your project-level build.gradle to include the 'android-apt' plugin:
 ```gradle
 repositories {
     maven {
-        url 'https://dl.bintray.com/adef145/teslacode/'
+        url 'https://dl.bintray.com/adef145/maven/'
     }
 }
 
 ...
 
 dependencies {
-    compile 'com.teslacode.plot:plot:0.2.0'
+    compile 'com.adefruandta.plot:plot:0.2.0'
 }
 ```

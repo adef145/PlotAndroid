@@ -1,4 +1,4 @@
-<manifest package="com.teslacode.plot"
+<manifest package="com.adefruandta.plot"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
