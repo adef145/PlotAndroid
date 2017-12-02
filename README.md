@@ -86,6 +86,6 @@ repositories {
 ...
 
 dependencies {
-    compile 'com.adefruandta.plot:plot:0.2.0'
+    compile 'com.adefruandta.plot:plot:0.1.0'
 }
 ```
